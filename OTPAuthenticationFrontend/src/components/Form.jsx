@@ -11,9 +11,12 @@ const Form = ({ onOtpSent }) => {
    event.preventDefault();
 
    try {
-     const response = await axios.post("http://localhost:3000/otp/send-otp", {
-       email,
-     });
+     const response = await axios.post(
+       `${import.meta.env.VITE_API_URL}/otp/send-otp`,
+       {
+         email,
+       }
+     );
      alert("OTP sent to your email!");
      onOtpSent(email);
      navigate("/otp");

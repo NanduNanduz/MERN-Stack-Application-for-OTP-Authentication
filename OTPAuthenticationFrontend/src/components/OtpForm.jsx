@@ -12,7 +12,7 @@ const OtpForm = ({ email }) => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/otp/verify-otp",
+        `${import.meta.env.VITE_API_URL}/otp/verify-otp`,
         {
           email,
           otp,
